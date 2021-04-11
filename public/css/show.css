@@ -1,0 +1,100 @@
+#sync1 .item {
+    background: #0c83e7;
+    padding: 80px 0px;
+    margin: 5px;
+    color: #FFF;
+    border-radius: 3px;
+    text-align: center;
+    
+
+  }
+  #sync2 .item {
+    background: #C9C9C9;
+    padding: 10px 0px;
+    margin: 5px;
+    color: #FFF;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    
+
+  }
+  #sync2 .item h1 {
+    font-size: 18px;
+    
+
+  }
+  #sync2 .current .item {
+    background: #b4072d;
+  }
+  .owl-theme .owl-nav {
+   
+
+    /*default owl-theme theme reset .disabled:hover links */
+  }
+  .owl-theme .owl-nav [class*='owl-'] {
+    transition: all 0.3s ease;
+    
+
+  }
+  .owl-theme .owl-nav [class*='owl-'].disabled:hover {
+    background-color: #D6D6D6;
+    
+
+  }
+  #sync1.owl-theme {
+    position: relative;
+    z-index: auto;
+
+  }
+  #sync2.owl-theme {
+    position: relative;
+    z-index: auto;
+
+  }
+  #sync1.owl-theme .owl-next,
+  #sync1.owl-theme .owl-prev {
+    width: 20px;
+    height: 15px;
+    margin-top: -20px;
+    position: absolute;
+    top: 50%;
+    
+  }
+  #sync1.owl-theme .owl-prev {
+    left: 10px;
+  }
+  #sync1.owl-theme .owl-next {
+    right: 10px;
+  }
+
+  /*Stars*/
+  .star-rating {
+    display: flex;
+    
+    font-size: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+.back-stars {
+    display: flex;
+    color: rgb(179, 175, 175);
+     position: relative;
+     
+    
+}
+.front-stars {
+    display: flex;
+    color: #66AAA2;
+    overflow: hidden;
+    position: absolute;
+    
+    top: 0;
+}
+.modal {
+  transition: opacity 0.25s ease;
+}
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}
