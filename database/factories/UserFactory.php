@@ -5,6 +5,8 @@ namespace Database\Factories;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use App\Models\Township;
+
 
 class UserFactory extends Factory
 {
@@ -27,6 +29,8 @@ class UserFactory extends Factory
             'gender' => $this->faker->randomElement(['femenino', 'masculino']),
             'birthdate' => $this->faker->date(),
             'address' => 'SomePlaceInThisPlanet',
+            'township' => $this->faker->numberBetween(1,10 )     ,
+
             'number'=> '98230211',
             'email' => $this->faker->unique()->safeEmail,
             'gender'=>$this->faker->randomElement(['masculino','femenino']),

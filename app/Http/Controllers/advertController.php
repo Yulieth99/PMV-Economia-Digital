@@ -24,23 +24,21 @@ class AdvertController extends Controller
     public function show($id){
         $advert = Advert::find($id);
         
-        
         $adProduct = Product::where('advert_id',$id)->first(); 
         $currency = Currency::find($adProduct->currency_id);
+
         $currency = $currency->currency_type;
         $township = Township::find($advert->township_id);
         $department = Departament::find($township->departament_id);
         $township = $township->name;
         $department = $department->name;
         $user = User::find($advert->user_id);
-        $townshipUser = Township::find($user->township_id);
-        $departmentUser = Departament::find($townshipUser->departament_id);
-        $townshipUser = $townshipUser->name;
+        $townshipUserk = Township::find($user->township);
+        $departmentUser = Departament::find($townshipUserk->departament_id);
+        $townshipUser = $townshipUserk->name;
         $departmentUser = $departmentUser->name;
         $AlladdsUser = Advert::where('user_id',$user->id )->get()->count();
         $adsActive = Advert::where('user_id',$user->id )->where('advert_status_id', 1)->get()->count();
-        $coment=  AdvertComment::where('advert_id',$id)->orderByDesc('created_at')->get();
-        $coment2 = DB::select("SELECT adverts_comments.id,adverts_comments.commentary,adverts_comments.user_id,adverts_comments.advert_id,adverts_comments.parent_id, DATE_FORMAT(adverts_comments.created_at, '%m/%d/%Y') as created_at, users.name FROM adverts_comments INNER JOIN users on adverts_comments.user_id = users.id WHERE adverts_comments.advert_id = :id  ORDER BY adverts_comments.created_at DESC", ['id' => $id]);
 
         $photos = AdvertPhoto::where('advert_id',$id)->get(); 
         $userAuth=Auth::id(); 
@@ -54,9 +52,7 @@ class AdvertController extends Controller
         $val= json_decode($calificacion,true);
         $val =number_format($val[0]["rating"],0);
        
-        $va = DB::select('SELECT * FROM `categories` where id  IN(SELECT category_id from `subscriptions` where user_id = :id)
-        ', ['id' => $di]);
-    
+        
            
         Carbon::setLocale('es');
         
@@ -72,12 +68,12 @@ class AdvertController extends Controller
        
         
 
-        return view('advert.show', compact('coment2','userAuth','val','townshipUser','departmentUser','userDt','advertDt', 'advert', 'category','adProduct','currency','township','department','user','adsActive','AlladdsUser','photos'));
+        return view('advert.show', compact('userAuth','val','townshipUser','departmentUser','userDt','advertDt', 'advert', 'category','adProduct','currency','township','department','user','adsActive','AlladdsUser','photos'));
 
 
     }
 
-    public function storeComment(Request $request){  #No esta completa - No es funcional
+   /* public function storeComment(Request $request){  #No esta completa - No es funcional
         
         $date = new Carbon();
         $comment = new AdvertComment();
@@ -90,5 +86,5 @@ class AdvertController extends Controller
         
         return redirect()->route('advert.show', $request->advert_id);
     
-    }
+    }*/
 }
