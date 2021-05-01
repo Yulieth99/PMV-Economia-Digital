@@ -57,6 +57,6 @@ Route::post('perfiles/calificacion', [PerfilController::class, 'storeCalificacio
 Route::get('adverts/{anuncio}/edit', [advertControllers::class, 'edit'])->name('adverts.edit');
 Route::get('/advert/search',[ AdvertController::class, 'search'])->name('advert.search');
 
-Route::get('/advert/{show}',[ AdvertController::class, 'show'])->name('advert.show');
+Route::middleware(['auth:sanctum', 'verified'])->get('/advert/{show}',[ AdvertController::class, 'show'])->name('advert.show');
 Route::middleware(['auth:sanctum', 'verified'])->post('/comment',[AdvertController::class, 'storeComment'])->name('advert.comment');
 
