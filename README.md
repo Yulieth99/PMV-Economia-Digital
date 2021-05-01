@@ -8,8 +8,8 @@ Instrucciones
 ***Proyecto desarrollado en Laravel 8**
 Se requiere una version de PHP >= 7.3
 ###### Despues de clonar el proyecto
-    1)Ejecutar el comando composer install
-    2)Ejecutar el comando npm install(se debe tener instalado node Js)
+    1)Ejecutar el comando: composer install
+    2)Ejecutar el comando: npm install(se debe tener instalado node Js)
   ######  3)Correr las migraciones y seeders: 
                                         -php artisan migrate
                                         -php artisan db:seed
