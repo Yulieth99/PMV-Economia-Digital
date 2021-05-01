@@ -35,7 +35,7 @@
                                         <option value='Todos'>Todos</option>
                                         <option value="Gratis">Gratis</option>
                                         <option value="Intercambio">Intercambio</option>
-                                        <option value="Venta">Venta</option>
+                                        <option value="Vender">Venta</option>
 
                             </select>
                             @error('contenido') <span class="error text-red-600">el estado del producto es obligatorio</span> @enderror        
