@@ -3,7 +3,10 @@
 namespace App\Providers;
 
 use App\Actions\Jetstream\DeleteUser;
+use App\Models\Departament;
+use App\Models\Township;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Fortify\Fortify;
 use Laravel\Jetstream\Jetstream;
 
 class JetstreamServiceProvider extends ServiceProvider
@@ -13,6 +16,9 @@ class JetstreamServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
+
+
     public function register()
     {
         //
@@ -24,7 +30,15 @@ class JetstreamServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
+    { 
+        
+
+        Fortify::registerView(function (){
+            $departaments = Departament::all();
+            $townships = Township::all();
+            return view('auth.register', compact('departaments', 'townships'));
+        });
+
         $this->configurePermissions();
 
         Jetstream::deleteUsersUsing(DeleteUser::class);

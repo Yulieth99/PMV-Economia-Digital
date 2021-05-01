@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Actions\Fortify;
 
 use App\Models\User;
@@ -23,6 +22,11 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'gender' => ['required', 'string'],
+            'birthdate' => ['required', 'date', "before:18 years ago"],
+            'address' => ['required', 'string'],
+            'number' => ['required', 'string'],
+            'township' => ['required', 'string'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
         ])->validate();
@@ -30,6 +34,13 @@ class CreateNewUser implements CreatesNewUsers
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
+            'gender' => $input['gender'],
+            'birthdate' => $input['birthdate'],
+            'address' => $input['address'],
+            'number' => $input['number'],
+            'township' => $input['township'],
+            'profile_photo_path' => 'profile-photos/user.png',
+            'condition' => '1',
             'password' => Hash::make($input['password']),
         ]);
     }
