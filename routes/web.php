@@ -35,8 +35,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/nuevo', function () {
 })->name('nuevo');
 
 
-Route::get('advertsUser/show/f{fill?}',[advertUserController::class, 'filterUser'])->name('advertsUser');
-Route::get('adverts/show/f{fill?}',[advertUserController::class, 'filter'])->name('adverts');
+Route::middleware(['auth:sanctum', 'verified'])->get('advertsUser/show/f{fill?}',[advertUserController::class, 'filterUser'])->name('advertsUser');
+Route::middleware(['auth:sanctum', 'verified'])->get('adverts/show/f{fill?}',[advertUserController::class, 'filter'])->name('adverts');
 
 /* Route::get('advert{id}?', function ($id = null) {
     return "work $id";

@@ -79,7 +79,7 @@
                         <div class="bg-transparent h-auto w-full px-3 " >
                             <div class="flex  flex-col pt-2 ">
                                 <div class="flex space-x-3 items-center">
-                                    <a href="{{route('perfiles.show', $calificacionUsers->userId)}}"><img src="https://atamashi.org/wp-content/uploads/2020/12/sesshomaru-hanyo-no-yashahime-2-1024x640.jpg" class="rounded-full h-14 w-14 bg-black " ></a>
+                                    <a href="{{route('perfiles.show', $calificacionUsers->userId)}}"><img src="https://th.bing.com/th/id/OIP.KRqDPTV9z-es438PW1sPUgAAAA?pid=ImgDet&rs=1" class="rounded-full h-14 w-14 bg-black " ></a>
                                     <div>
                                         <p class="text-blue-900 pb-0" >Por <a class="text-black hover:text-blue-500" href="{{route('perfiles.show', $calificacionUsers->userId)}}">{{$calificacionUsers->name}}</a></p>
                                         <div name="cal">
@@ -134,7 +134,7 @@
                                 <div class="bg-transparent h-auto w-full px-3 " >
                                     <div class="flex  flex-col pt-2 ">
                                         <div class="flex space-x-3 items-center">
-                                            <a href="{{route('perfiles.show', $calificacionUsers->userId)}}"><img src="https://atamashi.org/wp-content/uploads/2020/12/sesshomaru-hanyo-no-yashahime-2-1024x640.jpg" class="rounded-full h-14 w-14 bg-black " ></a>
+                                            <a href="{{route('perfiles.show', $calificacionUsers->userId)}}"><img src="https://th.bing.com/th/id/OIP.KRqDPTV9z-es438PW1sPUgAAAA?pid=ImgDet&rs=1" class="rounded-full h-14 w-14 bg-black " ></a>
                                             <div>
                                                 <p class="text-blue-900 pb-0" >Por <a class="text-black hover:text-blue-500" href="{{route('perfiles.show', $calificacionUsers->userId)}}">{{$calificacionUsers->name}}</a></p>
                                                 <div name="cal">
