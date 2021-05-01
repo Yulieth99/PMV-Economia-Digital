@@ -386,82 +386,82 @@ class TownshipSeeder extends Seeder
 
         Township::create([
             'name'=> 'Choluteca',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'Apacilagua',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'Concepción de Maria',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'Duyure',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'El Corpus',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'El Triunfo',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'Marcovia',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'Morolica',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'Namasigue',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'Orocuina',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'Pespire',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'San Antonio de Flores',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'San Isidro',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'San José',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'San Marco de Colón',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([
             'name'=> 'Santa Ana de Yusguare',
-            'departament_id'=>6
+            'departament_id'=>2
         ]);
 
         Township::create([

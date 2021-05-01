@@ -15,7 +15,7 @@ class CreateProductsAdvertsTable extends Migration
     {
         Schema::create('products_adverts', function (Blueprint $table) {
             $table->id();
-            $table->double('price');
+            $table->double('price')->default(0);
             $table->string('product_status');
             $table->unsignedBigInteger('advert_id');
             $table->foreign('advert_id')->references('id')->on('adverts')->onDelete('cascade');
