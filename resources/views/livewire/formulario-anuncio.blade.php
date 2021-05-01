@@ -40,7 +40,21 @@
                         @error('categoria') <br><span class="error text-red-600">la categoria es obligatoria</span> @enderror
                     </div>
 
-                    <div class="mb-8">
+                   <div class="mb-8">
+                          
+                        <label class="inline-block w-32 font-bold">Este libro es:</label>
+                        <select name="catadv" wire:model="catadv" 
+                            class="p-2 px-4 py-2 pr-8 leading-tight bg-white border border-gray-400 rounded shadow appearance-none hover:border-gray-500 focus:outline-none focus:shadow-outline">
+                            <option value='-1'>Seleccionar</option>
+                      <option value="Gratis"> Gratis</option>
+                      <option value="Intercambio"> Intercambio</option>
+                      <option value="Vender">Venta</option>
+                        </select>
+                      </div>
+
+                      <div class="mb-8">
+
+                            
                         <label class="inline-block w-32 font-bold">Departamento:</label>
                         <select name="departamento" wire:model="departamento" 
                             class="p-2 px-4 py-2 pr-8 leading-tight bg-white border border-gray-400 rounded shadow appearance-none hover:border-gray-500 focus:outline-none focus:shadow-outline">
@@ -106,9 +120,7 @@
                         <select name="moneda" wire:model="moneda" 
                             class=" w-80 p-2 px-4 py-2 pr-8 leading-tight bg-white border border-gray-400 rounded shadow appearance-none hover:border-gray-500 focus:outline-none focus:shadow-outline">
                             <option value='-1'>Tipo de moneda</option>
-                                @foreach($moneds as $moned)
-                                    <option value={{ $moned->id }}> {{ $moned->currency_type }}</option>
-                                @endforeach
+                                    <option value="1"> Lempiras</option>
                         </select>
                         
                         @error('moneda') <br><span class="error text-red-600">la moneda es obligatoria</span> @enderror

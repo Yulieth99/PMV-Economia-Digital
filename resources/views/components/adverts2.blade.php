@@ -24,7 +24,6 @@
                         {{ $advert->title}}
                     </x-slot>
                      <x-slot name="imgUser">
-                        {{ $advert->imgUser}}
                     </x-slot>
                     <x-slot name="imgAdvert">
                         {{ $advert->imgAdvert}}
@@ -36,7 +35,6 @@
                         {{ number_format($advert->price,2) }}
                     </x-slot>
                     <x-slot name="location">
-                        {{ $advert->township . ', '. $advert->departament }}
                     </x-slot>
                     <x-slot name="date">
                         {{ number_format((strtotime('now')-strtotime($advert->creation_date))/86400,0) }}
@@ -59,15 +57,6 @@
                     </x-slot>
 
                     
-                        @if ($advert->advert_status_id == 1)
-                            <div class="py-1 w-100">
-                                <div class="w-50 py-4" style="float: left"></div>
-                                <div class="py-1" style="float: right" >
-                                    <a href="{{route('advertsUser.edit',$advert->id)}}" @if ($advert->advert_status_id == 2) aria-disabled="true" class=" bg-gray-100 rounded-lg text-white mr-2" @endif class="px-4 bg-gray-400 rounded-lg text-white -bottom-8">Eliminar</a>
-                                </div>
-                            </div>  
-                        @endif
-
                                             
                     @else
 
@@ -89,7 +78,6 @@
             @endforeach
     
             </div>
-            {{ $adverts->links() }}
         </div>
         
     </div>

@@ -72,6 +72,71 @@ class AdvertController extends Controller
 
 
     }
+     public function search(Request $request){
+        
+if($request->word == null && $request->contenido !='Todos' ) {
+    $adverts = DB::table('adverts')
+         ->select(DB::raw('adverts.id as advert_id,adverts.title,adverts.creation_date,townshipes.name as township,departaments.name as departament ,users.id as user_id,users.name as user_name ,users.profile_photo_path as imgUser , adverts_photos.photo_path as imgAdvert ,products_adverts.price'))
+  
+        ->join('products_adverts','adverts.id','=','products_adverts.advert_id')
+          ->join('adverts_photos','adverts.id','=','adverts_photos.advert_id')
+           ->join('users','adverts.user_id','=','users.id')
+           ->join('townshipes','adverts.township_id','=','townshipes.id')
+           ->join('departaments','townshipes.departament_id','=','departaments.id')
+           ->where('adverts.cadAdvert','LIKE',"%{$request->contenido}%")->paginate(9);
+
+           return view("components.adverts2", compact('adverts'));
+
+
+
+}   
+if($request->word == null && $request->contenido == 'Todos' ) {
+    $adverts = DB::table('adverts')
+         ->select(DB::raw('adverts.id as advert_id,adverts.title,adverts.creation_date,townshipes.name as township,departaments.name as departament ,users.id as user_id,users.name as user_name ,users.profile_photo_path as imgUser , adverts_photos.photo_path as imgAdvert ,products_adverts.price'))
+  
+        ->join('products_adverts','adverts.id','=','products_adverts.advert_id')
+          ->join('adverts_photos','adverts.id','=','adverts_photos.advert_id')
+           ->join('users','adverts.user_id','=','users.id')
+           ->join('townshipes','adverts.township_id','=','townshipes.id')
+           ->join('departaments','townshipes.departament_id','=','departaments.id')
+           ->paginate(9);
+           return view("components.adverts2", compact('adverts'));
+
+
+
+} 
+ 
+      
+         if($request->contenido =='Todos'){
+            $adverts = DB::table('adverts')
+            ->select(DB::raw('adverts.id as advert_id,adverts.title,adverts.creation_date,townshipes.name as township,departaments.name as departament ,users.id as user_id,users.name as user_name ,users.profile_photo_path as imgUser , adverts_photos.photo_path as imgAdvert ,products_adverts.price'))
+     
+           ->join('products_adverts','adverts.id','=','products_adverts.advert_id')
+             ->join('adverts_photos','adverts.id','=','adverts_photos.advert_id')
+              ->join('users','adverts.user_id','=','users.id')
+              ->join('townshipes','adverts.township_id','=','townshipes.id')
+              ->join('departaments','townshipes.departament_id','=','departaments.id')
+              ->where('adverts.title','LIKE',"%{$request->word}%")->paginate(9);
+
+         }else{
+            $adverts = DB::table('adverts')
+         ->select(DB::raw('adverts.id as advert_id,adverts.title,adverts.creation_date,townshipes.name as township,departaments.name as departament ,users.id as user_id,users.name as user_name ,users.profile_photo_path as imgUser , adverts_photos.photo_path as imgAdvert ,products_adverts.price'))
+  
+        ->join('products_adverts','adverts.id','=','products_adverts.advert_id')
+          ->join('adverts_photos','adverts.id','=','adverts_photos.advert_id')
+           ->join('users','adverts.user_id','=','users.id')
+           ->join('townshipes','adverts.township_id','=','townshipes.id')
+           ->join('departaments','townshipes.departament_id','=','departaments.id')
+           ->where('adverts.title','LIKE',"%{$request->word}%")
+           ->where('adverts.cadAdvert','LIKE',"%{$request->contenido}%")->paginate(9);
+
+         }
+         return view("components.adverts2", compact('adverts'));
+
+         
+        //$anuncios = DB::select('SELECT * FROM adverts WHERE title LIKE "%:word%" ', ['word' => $request->word]);
+
+     }
 
    /* public function storeComment(Request $request){  #No esta completa - No es funcional
         

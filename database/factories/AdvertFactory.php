@@ -27,6 +27,7 @@ class AdvertFactory extends Factory
         return [
             'title'=> $this->faker->sentence(),
             'description'=> 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...',
+            'cadAdvert'=> 'Gratis',
             'creation_date'=> $this->faker->dateTimeBetween('-5 days','now'),
             'expiration_date'=> $this->faker->dateTimeBetween('+0 days', '+5 week'),
             'user_id'=>$this->faker->numberBetween(1, User::count()),

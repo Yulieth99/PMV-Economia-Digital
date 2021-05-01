@@ -33,6 +33,8 @@ class FormularioAnuncio extends Component
     public $precio = '';
     public $contenido;
     public $moneda;
+    public $catadv='';
+
     public $imagenes = [];
     
 
@@ -46,6 +48,7 @@ class FormularioAnuncio extends Component
         $this->precio = '';
         $this->contenido = -1;
         $this->moneda = -1;
+        $this->catadv = -1;        
         $this->imagenes = [];
     }
     
@@ -61,6 +64,8 @@ class FormularioAnuncio extends Component
             'precio' => 'required',
             'contenido' => 'required',
             'moneda' => 'required',
+            'catadv'=>'required',
+
             'imagenes.*' => 'required|image'
         ]);
         
@@ -74,6 +79,7 @@ class FormularioAnuncio extends Component
         $anuncio->category_id=$this->categoria;
         $anuncio->advert_status_id=$this->estado;
         $anuncio->township_id=$this->municipio;
+        $anuncio->cadAdvert=$this->catadv;
         $anuncio->save();
 
         $producto = new Product;

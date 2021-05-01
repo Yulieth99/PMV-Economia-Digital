@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('adverts') }}">
+                    <a href="{{route('welcome')}}"  >
                         <x-jet-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
@@ -17,7 +17,7 @@
                     </x-jet-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-4 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('nuevo') }}" :active="request()->routeIs('nuevo')">
                         {{ __('Nuevo Anuncio') }}
                     </x-jet-nav-link>
@@ -27,6 +27,26 @@
                         {{ __('Anuncios Publicados') }}
                     </x-jet-nav-link>
                 </div>
+                <div class="container pt-2">
+                    <form class="relative flex space-x-2 pb-1" action="{{route('advert.search')}}" method="GET">
+                        @csrf
+                            <label  class=" w-32 font-bold"></label>
+                            <select name="contenido"   class="  py-2  leading-tight bg-white border border-gray-400 rounded shadow appearance-none hover:border-gray-500 focus:outline-none focus:shadow-outline">
+                                        <option value='Todos'>Todos</option>
+                                        <option value="Gratis">Gratis</option>
+                                        <option value="Intercambio">Intercambio</option>
+                                        <option value="Venta">Venta</option>
+
+                            </select>
+                            @error('contenido') <span class="error text-red-600">el estado del producto es obligatorio</span> @enderror        
+                            <input name="word" class="w-auto h-11 rounded  focus:outline-none  pb-3 focus:shadow-outline text-xl px-8 " type="search" placeholder="Buscar por nombre...">
+                        
+                        <button type="submit" class="w-20 rounded-r-lg bg-yellow-500">Buscar  </button>
+                    
+                </form>
+
+                  </div>
+
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

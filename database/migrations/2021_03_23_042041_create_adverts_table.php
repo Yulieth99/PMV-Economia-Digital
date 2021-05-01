@@ -17,6 +17,8 @@ class CreateAdvertsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
+            $table->string('cadAdvert')->nullable();
+
             $table->date('creation_date');
             $table->date('expiration_date');
             $table->unsignedBigInteger('user_id');
