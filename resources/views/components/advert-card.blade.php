@@ -7,7 +7,7 @@
             </div>
         </a>
       <div style="background-color: rgba(0,0,0,0.6)"
-        class="absolute bottom-0 mb-2 ml-3 px-2 py-1 rounded text-sm text-white">$ {{ $price }}</div>
+        class="absolute bottom-0 mb-2 ml-3 px-2 py-1 rounded text-sm text-white">Lps. {{ $price }}</div>
       <div style="bottom: -20px;" class="absolute right-0 w-10 mr-2">
         <a href="{{ $UserLink }}">
           <img class="rounded-full border-2 border-white" src="@if($imgUser != ""){{ asset('/storage/'.$imgUser) }}@else{{ asset('img/user.png') }}@endif" >

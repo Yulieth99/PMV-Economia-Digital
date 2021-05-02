@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{route('welcome')}}"  >
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                        <img class="rounded-full h-16 w-16" src="{{ asset('img/icono.png') }}" alt="">
                     </a>
                 </div>
 
@@ -38,11 +38,11 @@
                                         <option value="Vender">Venta</option>
 
                             </select>
-                            @error('contenido') <span class="error text-red-600">el estado del producto es obligatorio</span> @enderror        
+                            @error('contenido') <span class="error text-red-600">el estado del producto es obligatorio</span> @enderror
                             <input name="word" class="w-auto h-11 rounded  focus:outline-none  pb-3 focus:shadow-outline text-xl px-8 " type="search" placeholder="Buscar por nombre...">
-                        
+
                         <button type="submit" class="w-20 rounded-r-lg bg-yellow-500">Buscar  </button>
-                    
+
                 </form>
 
                   </div>
@@ -185,7 +185,7 @@
 
                 <div>
                     <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div> 
+                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
                 </div>
             </div>
 

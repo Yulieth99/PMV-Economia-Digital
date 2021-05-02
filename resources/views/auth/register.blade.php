@@ -1,9 +1,9 @@
 
-  
+
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <img class="rounded-full h-16 w-16" src="img/icono.png" alt="">
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
@@ -22,7 +22,7 @@
                     <select id="gender" name="gender" class="form-input rounded-md shadow-sm block mt-1 w-full" >
                         <option value="femenino">Femenino</option>
                         <option value="masculino">Masculino</option>
-                    </select> 
+                    </select>
                 </div>
 
                 <div class="w-2/3">
@@ -44,7 +44,7 @@
                                 @foreach($departaments as $departament)
                                     <option value={{ $departament->id }}> {{ $departament->name }}</option>
                                 @endforeach
-                    </select> 
+                    </select>
                 </div>
 
                 <div class="w-1/2">
@@ -52,11 +52,11 @@
                     <select id="township" name="township" class="form-input rounded-md shadow-sm block mt-1 w-full" >
                         <option value='-1'>Seleccione uno</option>
                           {{--       @foreach($townships as $township)
-                                   
+
                                        <option value={{ $township->id }}> {{ $township->name }}</option>
-                                   
+
                                 @endforeach --}}
-                    </select> 
+                    </select>
                 </div>
 
             </div>
@@ -131,7 +131,7 @@
                         jQuery('#township').append(`<option value="${town.id}">${town.name}</option>`); //AGREGA AL SELECCT LOS MUNICIPIOS DEL DEPARTAMENTO SELECCIONADO
                     }
                 });
-            });   
+            });
         });
     </script>
 </x-guest-layout>
